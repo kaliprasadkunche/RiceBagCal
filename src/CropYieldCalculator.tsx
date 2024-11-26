@@ -12,7 +12,7 @@ import {
 } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
-import backgroundImage from './bg4.png';
+import backgroundImage from './bg7.png';
 import truck from './trcuk.png';
 import bag from './bag.png';
 import resultbg from './rs.png';
