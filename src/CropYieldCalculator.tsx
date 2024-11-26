@@ -12,7 +12,7 @@ import {
 } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
-import backgroundImage from './bg1.png';
+import backgroundImage from './bg4.png';
 import truck from './trcuk.png';
 import bag from './bag.png';
 import resultbg from './rs.png';
@@ -148,11 +148,12 @@ const CropYieldCalculator: React.FC = () => {
     sx={{
       backgroundImage: `url(${backgroundImage})`,
       backgroundSize: 'cover',
-      minHeight: '100vh',
+      minHeight: '95vh',
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'flex-start',
       alignItems: 'center',
+      padding: '25px'
     }}
   >  
    <Paper 
@@ -182,7 +183,7 @@ const CropYieldCalculator: React.FC = () => {
                 }}
               />
               <Button
-                sx={{borderRadius: 4, backgroundColor: "#43db3b"}}
+                sx={{borderRadius: 4, backgroundColor: "#0f9335"}}
                 variant="contained"
                 onClick={() => {
                   setCalcType('direct');
@@ -203,7 +204,7 @@ const CropYieldCalculator: React.FC = () => {
                 }}
               />
               <Button
-                sx={{borderRadius: 4, backgroundColor: "#43db3b"}}
+                sx={{borderRadius: 4, backgroundColor: "#0f9335"}}
                 variant="contained"
                 onClick={() => {
                   setCalcType('bags');
@@ -337,13 +338,13 @@ const CropYieldCalculator: React.FC = () => {
                     onClick={() => {
                       setCurrentStep(0); 
                     }}
-                    sx={{p: 1, color: 'white', margin:2, borderRadius: 4, backgroundColor: "#43db3b"}}
+                    sx={{p: 1, color: 'white', margin:2, borderRadius: 4, backgroundColor: "#0f9335"}}
                   >
                     Back
                   </Button>
                   <Button
                     onClick={calculateYield}
-                    sx={{p: 1, color: 'white', margin:2, borderRadius: 4, backgroundColor: "#43db3b"}}
+                    sx={{p: 1, color: 'white', margin:2, borderRadius: 4, backgroundColor: "#0f9335"}}
                   >
                     Calculate
                   </Button>
@@ -511,13 +512,13 @@ const CropYieldCalculator: React.FC = () => {
                     onClick={() => {
                       setCurrentStep(0);
                     }}
-                    sx={{p: 1, color: 'white', margin:2, borderRadius: 4, backgroundColor: "#43db3b"}}
+                    sx={{p: 1, color: 'white', margin:2, borderRadius: 4, backgroundColor: "#0f9335"}}
                   >
                     Back
                   </Button>
                   <Button
                     onClick={calculateYield}
-                    sx={{p: 1, color: 'white', margin:2, borderRadius: 4, backgroundColor: "#43db3b"}}
+                    sx={{p: 1, color: 'white', margin:2, borderRadius: 4, backgroundColor: "#0f9335"}}
                   >
                     Calculate
                   </Button>
@@ -527,14 +528,14 @@ const CropYieldCalculator: React.FC = () => {
           </Box>
         )}
 
-        {currentStep === 1 && (
+        {/* {currentStep === 1 && (
           <IconButton
-            sx={{ position: 'absolute', bottom: 16, left: 16, borderRadius: '50%', bgcolor: 'primary.main' }}
+            sx={{ position: 'absolute', top: 16, left: 16, borderRadius: '50%', bgcolor: 'primary.main' }}
             onClick={handleBack}
           >
             <ArrowBackIcon sx={{ color: 'white' }} />
           </IconButton>
-        )}
+        )} */}
 
         {currentStep === 2 && result && (
           <Box
@@ -562,22 +563,36 @@ const CropYieldCalculator: React.FC = () => {
                 </Typography>
               </CardContent>
             </Card>
+            <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
             <Button
               variant="contained"
               color="primary"
               onClick={downloadImage}
-              sx={{p: 1, color: 'white', margin:2, borderRadius: 4, backgroundColor: "#43db3b"}}
+              sx={{p: 1, color: 'white', margin:2, borderRadius: 4, backgroundColor: "#0f9335", fontSize: 13}}
             >
               Download Result
             </Button>
+            <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'center'}}>
+            <Button
+                    onClick={() => {
+                      setCurrentStep(1); 
+                    }}
+                    sx={{p: 1, color: 'white', margin:2, borderRadius: 4, backgroundColor: "#0f9335", fontSize: 13}}
+                  >
+                    Back
+                  </Button>
             <Button
                   onClick={() => {
                     setCurrentStep(0);
                   }}
-                  sx={{p: 1, color: 'white', margin:2, borderRadius: 4, backgroundColor: "#43db3b"}}
+                  sx={{p: 1, color: 'white', margin:2, borderRadius: 4, backgroundColor: "#0f9335", fontSize: 13}}
                 >
                   Start Over
                 </Button>
+            </Box>
+            </Box>
+            
+            
           </Box>
         )}
       </Paper>
